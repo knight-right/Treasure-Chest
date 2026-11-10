@@ -1,0 +1,54 @@
+filters:
+  and:
+    - file.ext == "md"
+    - '!file.inFolder("模板")'
+    - '!file.inFolder("日记")'
+properties:
+  file.name:
+    displayName: 笔记
+  type:
+    displayName: 类型
+  status:
+    displayName: 状态
+  updated:
+    displayName: 更新日期
+  file.folder:
+    displayName: 位置
+views:
+  - type: table
+    name: 进行中与待办
+    filters:
+      and:
+        - status != null
+        - status != "已完成"
+    order:
+      - file.name
+      - type
+      - status
+      - updated
+      - file.folder
+  - type: table
+    name: 最近修改
+    order:
+      - file.name
+      - type
+      - file.mtime
+      - file.folder
+    sort:
+      - property: file.mtime
+        direction: DESC
+    limit: 20
+  - type: table
+    name: 全部笔记（按类型）
+    filters:
+      and:
+        - type != "索引"
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - status
+      - tags
+      - file.folder

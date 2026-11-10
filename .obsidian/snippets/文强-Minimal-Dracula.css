@@ -1,0 +1,403 @@
+/*
+ * 文强的知识库 · Minimal × Dracula
+ * Dracula colors, modern Obsidian variables, and topic navigation icons.
+ * Toggle in Settings → Appearance → CSS snippets.
+ */
+
+/* Text and spacing: MathJax keeps its own mathematical fonts. */
+body {
+  --font-interface-theme: "Segoe UI", "Microsoft YaHei UI", sans-serif;
+  --font-text-theme: "Segoe UI", "Microsoft YaHei", sans-serif;
+  --font-editor-theme: "Segoe UI", "Microsoft YaHei", sans-serif;
+  --font-monospace-theme: Consolas, "Microsoft YaHei", monospace;
+  --line-height: 1.75;
+  --line-height-normal: 1.75;
+  --line-width: 48rem;
+  --file-line-width: 48rem;
+  --p-spacing: 1.05rem;
+  --heading-spacing: 1.8em;
+  --h1-size: 1.85em;
+  --h2-size: 1.4em;
+  --h3-size: 1.16em;
+  --h4-size: 1.05em;
+  --h5-size: 1em;
+  --h6-size: 0.95em;
+  --h1-weight: 700;
+  --h2-weight: 650;
+  --h3-weight: 600;
+  --h4-weight: 600;
+  --h5-weight: 600;
+  --h6-weight: 600;
+  --h5-variant: normal;
+  --h6-variant: normal;
+  --inline-title-size: 1.9em;
+  --inline-title-weight: 700;
+  --nav-item-size: 14px;
+  --nav-item-padding: 6px 9px;
+  --nav-item-weight: 450;
+  --nav-item-weight-active: 600;
+  --nav-item-white-space: nowrap;
+  --nav-indentation-guide-width: 1px;
+  --nav-indentation-guide-color: var(--background-modifier-border);
+  --radius-s: 6px;
+  --radius-m: 9px;
+  --radius-l: 12px;
+  --code-size: 0.9em;
+  --code-radius: 9px;
+  --code-white-space: pre;
+  --table-border-width: 1px;
+  --table-header-weight: 600;
+  --table-cell-padding: 9px 13px;
+  --blockquote-border-thickness: 3px;
+  --blockquote-font-style: normal;
+  --icon-stroke: 1.8px;
+  --icon-opacity: 0.9;
+  --tag-radius: 5px;
+  --tag-padding-x: 0.45em;
+  --tag-padding-y: 0.15em;
+  --link-decoration: none;
+  --link-decoration-hover: underline;
+  --link-external-decoration: none;
+  --link-external-decoration-hover: underline;
+}
+
+body.theme-dark {
+  --bg1: #282a36;
+  --bg2: #222430;
+  --bg3: rgba(189, 147, 249, 0.1);
+  --ui1: #3c3f52;
+  --ui2: #4c5068;
+  --ui3: #686d8b;
+  --tx1: #f2f2f5;
+  --tx2: #b4bad0;
+  --tx3: #929ab8;
+  --tx4: #bfc5d9;
+  --ax1: #bd93f9;
+  --ax2: #d4b4ff;
+  --ax3: #a87de8;
+  --hl1: rgba(189, 147, 249, 0.22);
+  --hl2: rgba(241, 250, 140, 0.2);
+  --sp1: #20212d;
+  --color-red: #ff6d85;
+  --color-red-rgb: 255, 109, 133;
+  --color-orange: #ffb86c;
+  --color-orange-rgb: 255, 184, 108;
+  --color-yellow: #f1fa8c;
+  --color-yellow-rgb: 241, 250, 140;
+  --color-green: #73e5a5;
+  --color-green-rgb: 115, 229, 165;
+  --color-cyan: #8be9fd;
+  --color-cyan-rgb: 139, 233, 253;
+  --color-blue: #99bfff;
+  --color-blue-rgb: 153, 191, 255;
+  --color-purple: #bd93f9;
+  --color-purple-rgb: 189, 147, 249;
+  --color-pink: #ff79c6;
+  --color-pink-rgb: 255, 121, 198;
+  --background-primary: var(--bg1);
+  --background-primary-alt: #2d3040;
+  --background-secondary: var(--bg2);
+  --background-secondary-alt: #1e202c;
+  --background-modifier-border: var(--ui1);
+  --background-modifier-border-hover: var(--ui2);
+  --background-modifier-border-focus: var(--color-purple);
+  --background-modifier-hover: var(--bg3);
+  --text-normal: var(--tx1);
+  --text-muted: var(--tx2);
+  --text-faint: var(--tx3);
+  --text-accent: var(--color-purple);
+  --text-accent-hover: var(--color-cyan);
+  --text-on-accent: #20212d;
+  --text-selection: var(--hl1);
+  --interactive-accent: #bd93f9;
+  --interactive-accent-hover: #cfa9ff;
+  --interactive-accent-rgb: 189, 147, 249;
+  --code-background: #232530;
+  --table-header-background: #303346;
+  --table-row-alt-background: rgba(189, 147, 249, 0.035);
+  --table-row-background-hover: rgba(139, 233, 253, 0.055);
+  --wq-heading-rule: rgba(189, 147, 249, 0.23);
+  --wq-folder-background: rgba(189, 147, 249, 0.055);
+  --wq-active-background: rgba(189, 147, 249, 0.15);
+  --wq-category-background: rgba(139, 233, 253, 0.045);
+}
+
+/* A matching palette remains readable when switching to light mode. */
+body.theme-light {
+  --bg1: #fcfbff;
+  --bg2: #f1eef8;
+  --bg3: rgba(116, 79, 180, 0.075);
+  --ui1: #e1dceb;
+  --ui2: #cfc6df;
+  --ui3: #b4a6cc;
+  --tx1: #353147;
+  --tx2: #635c77;
+  --tx3: #7c718f;
+  --tx4: #5f5572;
+  --ax1: #744fb4;
+  --ax2: #5a348f;
+  --ax3: #8761c4;
+  --hl1: rgba(116, 79, 180, 0.16);
+  --hl2: rgba(233, 193, 75, 0.25);
+  --sp1: #ffffff;
+  --color-red: #bd3b54;
+  --color-red-rgb: 189, 59, 84;
+  --color-orange: #a96020;
+  --color-orange-rgb: 169, 96, 32;
+  --color-yellow: #827018;
+  --color-yellow-rgb: 130, 112, 24;
+  --color-green: #247650;
+  --color-green-rgb: 36, 118, 80;
+  --color-cyan: #08798b;
+  --color-cyan-rgb: 8, 121, 139;
+  --color-blue: #3466a6;
+  --color-blue-rgb: 52, 102, 166;
+  --color-purple: #744fb4;
+  --color-purple-rgb: 116, 79, 180;
+  --color-pink: #ac397e;
+  --color-pink-rgb: 172, 57, 126;
+  --background-primary: var(--bg1);
+  --background-primary-alt: #f5f2fa;
+  --background-secondary: var(--bg2);
+  --background-secondary-alt: #eae5f4;
+  --background-modifier-border: var(--ui1);
+  --background-modifier-border-hover: var(--ui2);
+  --background-modifier-border-focus: var(--color-purple);
+  --background-modifier-hover: var(--bg3);
+  --text-normal: var(--tx1);
+  --text-muted: var(--tx2);
+  --text-faint: var(--tx3);
+  --text-accent: var(--color-purple);
+  --text-accent-hover: var(--color-cyan);
+  --text-on-accent: #ffffff;
+  --text-selection: var(--hl1);
+  --interactive-accent: #744fb4;
+  --interactive-accent-hover: #5a348f;
+  --interactive-accent-rgb: 116, 79, 180;
+  --code-background: #f0edf7;
+  --table-header-background: #ede7f7;
+  --table-row-alt-background: rgba(116, 79, 180, 0.025);
+  --table-row-background-hover: rgba(8, 121, 139, 0.055);
+  --wq-heading-rule: rgba(116, 79, 180, 0.2);
+  --wq-folder-background: rgba(116, 79, 180, 0.045);
+  --wq-active-background: rgba(116, 79, 180, 0.12);
+  --wq-category-background: rgba(8, 121, 139, 0.035);
+}
+
+body.theme-dark,
+body.theme-light {
+  --h1-color: var(--color-pink);
+  --h2-color: var(--color-purple);
+  --h3-color: var(--color-cyan);
+  --h4-color: var(--color-orange);
+  --h5-color: var(--color-green);
+  --h6-color: var(--color-blue);
+  --inline-title-color: var(--color-pink);
+  --bold-color: var(--color-green);
+  --italic-color: var(--color-orange);
+  --link-color: var(--color-cyan);
+  --link-color-hover: var(--color-pink);
+  --link-external-color: var(--color-cyan);
+  --link-external-color-hover: var(--color-pink);
+  --link-unresolved-color: var(--color-orange);
+  --list-marker-color: var(--color-purple);
+  --list-marker-color-hover: var(--color-pink);
+  --checkbox-color: var(--color-purple);
+  --checkbox-color-hover: var(--color-pink);
+  --code-normal: var(--text-normal);
+  --code-comment: var(--text-faint);
+  --code-function: var(--color-green);
+  --code-keyword: var(--color-pink);
+  --code-important: var(--color-orange);
+  --code-operator: var(--color-pink);
+  --code-property: var(--color-cyan);
+  --code-punctuation: var(--text-muted);
+  --code-string: var(--color-yellow);
+  --code-tag: var(--color-pink);
+  --code-value: var(--color-purple);
+  --blockquote-border-color: var(--color-orange);
+  --blockquote-background-color: var(--wq-folder-background);
+  --table-header-color: var(--color-purple);
+  --tag-color: var(--color-purple);
+  --tag-background: var(--wq-active-background);
+  --tag-color-hover: var(--color-pink);
+  --icon-color: var(--text-muted);
+  --icon-color-hover: var(--color-cyan);
+  --icon-color-active: var(--color-pink);
+  --nav-item-color: var(--text-muted);
+  --nav-item-color-hover: var(--text-normal);
+  --nav-item-color-active: var(--color-purple);
+  --nav-item-background-active: var(--wq-active-background);
+  --nav-item-background-hover: var(--wq-folder-background);
+  --tab-text-color-active: var(--color-purple);
+  --tab-text-color-focused-active: var(--color-purple);
+  --tab-text-color-focused-active-current: var(--color-purple);
+}
+
+/* Reading and Live Preview receive the same heading hierarchy. */
+.markdown-rendered h1 {
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--wq-heading-rule);
+}
+
+.markdown-rendered h2 {
+  padding-left: 0.65em;
+  border-left: 3px solid var(--color-purple);
+}
+
+.markdown-rendered h3 { letter-spacing: 0.01em; }
+.markdown-rendered strong,
+.markdown-source-view .cm-strong { color: var(--bold-color); }
+.markdown-rendered em,
+.markdown-source-view .cm-em { color: var(--italic-color); }
+.markdown-rendered :not(pre) > code {
+  color: var(--color-purple);
+  padding: 0.12em 0.35em;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 5px;
+}
+.markdown-rendered pre {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--code-radius);
+}
+.markdown-rendered blockquote {
+  padding: 0.65em 1em;
+  border-radius: 0 8px 8px 0;
+}
+.markdown-rendered .math-block {
+  padding-block: 0.4em;
+  margin-block: 1.25em;
+}
+.markdown-rendered .callout { border-radius: 9px; }
+.markdown-rendered .callout[data-callout="question"] { --callout-color: var(--color-orange-rgb); }
+.markdown-rendered .callout[data-callout="tip"] { --callout-color: var(--color-green-rgb); }
+.markdown-rendered .callout[data-callout="info"] { --callout-color: var(--color-cyan-rgb); }
+
+/* Navigation: small vector icons, without changing any file/folder names. */
+body {
+  --wq-icon-folder: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10H3Z'/%3E%3C/svg%3E");
+  --wq-icon-code: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m8 7-5 5 5 5m8-10 5 5-5 5m-3-12-2 14'/%3E%3C/svg%3E");
+  --wq-icon-book: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v15M3 4c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 2-3-3-6-3-9-2Z'/%3E%3C/svg%3E");
+  --wq-icon-question: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 11a8 8 0 0 1-8 8H7l-4 3V11a9 9 0 0 1 18 0ZM9.5 8a2.5 2.5 0 1 1 4 2c-1 .7-1.5 1-1.5 2m0 3h.01'/%3E%3C/svg%3E");
+  --wq-icon-practice: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 3h6m-5 0v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M8 14h8m-5 3h.01m3 1h.01'/%3E%3C/svg%3E");
+  --wq-icon-robot: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='7' width='14' height='13' rx='3'/%3E%3Cpath d='M12 3v4M2 11v5m20-5v5M9 12h.01M15 12h.01M9 16h6'/%3E%3C/svg%3E");
+  --wq-icon-camera: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 7h4l2-3h6l2 3h4v13H3Z'/%3E%3Ccircle cx='12' cy='13' r='4'/%3E%3C/svg%3E");
+  --wq-icon-terminal: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='16' rx='2'/%3E%3Cpath d='m7 9 3 3-3 3m6 0h4'/%3E%3C/svg%3E");
+  --wq-icon-data: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='12' cy='5' rx='8' ry='3'/%3E%3Cpath d='M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0'/%3E%3C/svg%3E");
+  --wq-icon-network: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='8' y='2' width='8' height='6' rx='1'/%3E%3Cpath d='M12 8v5M5 17v-4h14v4'/%3E%3Crect x='2' y='17' width='6' height='5' rx='1'/%3E%3Crect x='16' y='17' width='6' height='5' rx='1'/%3E%3C/svg%3E");
+  --wq-icon-note: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 3h10l4 4v14H5ZM14 3v5h5M8 12h8m-8 4h6'/%3E%3C/svg%3E");
+  --wq-icon-home: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m3 10 9-7 9 7M5 9v12h14V9M9 21v-8h6v8'/%3E%3C/svg%3E");
+}
+
+.nav-folder-title {
+  --wq-folder-color: var(--color-purple);
+  --wq-folder-icon: var(--wq-icon-folder);
+  color: var(--wq-folder-color);
+  border-radius: 6px;
+}
+.nav-folder:not(.mod-root) > .nav-folder-title .nav-folder-title-content,
+.nav-file-title .nav-file-title-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+.nav-folder:not(.mod-root) > .nav-folder-title .nav-folder-title-content::before,
+.nav-file-title .nav-file-title-content::before {
+  content: "";
+  display: inline-block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--wq-folder-color, var(--text-faint));
+  -webkit-mask: var(--wq-folder-icon, var(--wq-icon-note)) center / contain no-repeat;
+  mask: var(--wq-folder-icon, var(--wq-icon-note)) center / contain no-repeat;
+}
+.nav-folder-title .collapse-icon { color: var(--wq-folder-color); opacity: 0.75; }
+.nav-folder-title:hover { background-color: var(--wq-folder-background); }
+.nav-file-title { border-radius: 6px; }
+.nav-file-title.is-active { box-shadow: inset 2px 0 0 var(--color-purple); }
+.nav-file-title.is-active .nav-file-title-content::before { background-color: var(--color-purple); }
+
+.nav-folder-title[data-path="C语言"],
+.nav-folder-title[data-path="C++"] {
+  --wq-folder-color: var(--color-cyan);
+  --wq-folder-icon: var(--wq-icon-code);
+}
+.nav-folder-title[data-path="Python"],
+.nav-folder-title[data-path="Go语言"],
+.nav-folder-title[data-path="Java"] {
+  --wq-folder-color: var(--color-orange);
+  --wq-folder-icon: var(--wq-icon-code);
+}
+.nav-folder-title[data-path="数据结构与算法"],
+.nav-folder-title[data-path="汇编语言"] {
+  --wq-folder-color: var(--color-purple);
+  --wq-folder-icon: var(--wq-icon-code);
+}
+.nav-folder-title[data-path="Linux与Shell"],
+.nav-folder-title[data-path="编译与调试工具"] {
+  --wq-folder-color: var(--color-green);
+  --wq-folder-icon: var(--wq-icon-terminal);
+}
+.nav-folder-title[data-path="Qt"] {
+  --wq-folder-color: var(--color-green);
+  --wq-folder-icon: var(--wq-icon-code);
+}
+.nav-folder-title[data-path="网络通信"] {
+  --wq-folder-color: var(--color-blue);
+  --wq-folder-icon: var(--wq-icon-network);
+}
+.nav-folder-title[data-path="MySQL"],
+.nav-folder-title[data-path="Redis"] {
+  --wq-folder-color: var(--color-cyan);
+  --wq-folder-icon: var(--wq-icon-data);
+}
+.nav-folder-title[data-path="机械臂"] {
+  --wq-folder-color: var(--color-pink);
+  --wq-folder-icon: var(--wq-icon-robot);
+}
+.nav-folder-title[data-path="Jetson相机"] {
+  --wq-folder-color: var(--color-purple);
+  --wq-folder-icon: var(--wq-icon-camera);
+}
+.nav-folder-title[data-path$="/基础知识"] {
+  --wq-folder-color: var(--color-cyan);
+  --wq-folder-icon: var(--wq-icon-book);
+}
+.nav-folder-title[data-path$="/问答与疑问"] {
+  --wq-folder-color: var(--color-orange);
+  --wq-folder-icon: var(--wq-icon-question);
+}
+.nav-folder-title[data-path$="/实操及实现效果"] {
+  --wq-folder-color: var(--color-green);
+  --wq-folder-icon: var(--wq-icon-practice);
+}
+.nav-file-title[data-path="首页.md"] {
+  --wq-folder-color: var(--color-purple);
+  --wq-folder-icon: var(--wq-icon-home);
+}
+.nav-file-title[data-path$=".pdf"] {
+  --wq-folder-color: var(--color-orange);
+  --wq-folder-icon: var(--wq-icon-book);
+}
+
+/* Existing toolbar SVGs keep their shape and receive semantic colors. */
+.workspace-ribbon .clickable-icon:has(.lucide-search),
+.workspace-ribbon .clickable-icon:has(.lucide-search-check) { color: var(--color-cyan); }
+.workspace-ribbon .clickable-icon:has(.lucide-git-fork),
+.workspace-ribbon .clickable-icon:has(.lucide-network) { color: var(--color-purple); }
+.workspace-ribbon .clickable-icon:has(.lucide-calendar),
+.workspace-ribbon .clickable-icon:has(.lucide-calendar-days) { color: var(--color-orange); }
+.workspace-ribbon .clickable-icon:has(.lucide-layout-dashboard),
+.workspace-ribbon .clickable-icon:has(.lucide-layout-grid) { color: var(--color-green); }
+.workspace-ribbon .clickable-icon:hover { color: var(--color-pink); }
+.workspace-tab-header.is-active .workspace-tab-header-inner-icon { color: var(--color-purple); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .nav-folder-title,
+  .nav-file-title,
+  .workspace-ribbon .clickable-icon {
+    transition: background-color 120ms ease, color 120ms ease;
+  }
+}

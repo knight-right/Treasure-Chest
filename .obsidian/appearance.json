@@ -1,0 +1,11 @@
+{
+  "theme": "obsidian",
+  "cssTheme": "Minimal",
+  "enabledCssSnippets": [
+    "文强-Minimal-Dracula"
+  ],
+  "textFontFamily": "Segoe UI, Microsoft YaHei",
+  "interfaceFontFamily": "Segoe UI, Microsoft YaHei UI",
+  "monospaceFontFamily": "Consolas",
+  "baseFontSize": 17
+}
