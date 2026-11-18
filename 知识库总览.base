@@ -3,7 +3,11 @@ filters:
     - file.ext == "md"
     - '!file.inFolder("模板")'
     - '!file.inFolder("日记")'
+formulas:
+  部分: file.folder.split("/")[0]
 properties:
+  formula.部分:
+    displayName: 部分
   file.name:
     displayName: 笔记
   type:
@@ -24,6 +28,19 @@ views:
     order:
       - file.name
       - type
+      - status
+      - updated
+      - file.folder
+  - type: table
+    name: 面经进度
+    filters:
+      and:
+        - type == "面经"
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
       - status
       - updated
       - file.folder
@@ -51,4 +68,21 @@ views:
       - type
       - status
       - tags
+      - file.folder
+  - type: table
+    name: 按部分分组
+    filters:
+      and:
+        - type != "索引"
+        - file.folder != "/"
+        - file.folder != ""
+        - '!file.inFolder("参考资料")'
+    groupBy:
+      property: formula.部分
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - status
+      - updated
       - file.folder
